@@ -1,0 +1,50 @@
+
+
+
+<h1>{{arrCategories[(prod[0].idCategory-1)].name}}</h1>
+<!--<div *ngFor="let item of prod" class="card container" >-->
+<!--<div class="card-head"> </div>-->
+<!--<img src={{item.srcImg}} class="card-img-top image" alt={{item.name}}>
+
+  <div class="overlay">
+    <div class="text">
+      <h2 class="card-title">{{item.name}}</h2>
+      <button  [routerLink]="['/UpdateProducts/'+item.id+'']" class="btn btn-primary">לעדכון המלאי</button>
+    </div>
+  </div>
+</div>-->
+<!--<app-add-product></app-add-product>-->
+<table class="table">
+  <thead>
+    <tr class="bg-success">
+      <th scope="col">מספר פריט</th>
+
+      <th scope="col">שם פריט</th>
+      <th scope="col">סוג כמות</th>
+      <th scope="col">מלאי</th>
+      <th scope="col">עדכון</th>
+      <th scope="col">מחיקה</th>
+
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of prod">
+    <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{arrStorageType[item.idCategory-1].name}}</td>
+      <td>{{item.quantity}}</td>
+      <td>
+        <button (click)="update(item.id,item)">
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+      </td>
+      <td>
+        <button (click)="delete(item.id)">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+

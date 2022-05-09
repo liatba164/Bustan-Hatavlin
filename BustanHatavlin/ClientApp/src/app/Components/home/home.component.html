@@ -1,0 +1,14 @@
+
+<h1>בוסתן התבלין</h1>
+<div *ngFor="let item of imgArr" class="card container border-radius" [routerLink]=item.path>
+
+  <img src={{item.src}} class="card-img-top image border-radius" alt={{item.name}}>
+  <div class="overlay border-radius">
+    <div class="text" >
+
+      <h2 class="card-title ">{{item.name}}</h2>
+    </div>
+  </div>
+</div>
+
+

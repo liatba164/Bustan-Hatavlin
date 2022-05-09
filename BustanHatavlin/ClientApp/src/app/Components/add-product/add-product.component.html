@@ -1,0 +1,53 @@
+<h1>הוספת מוצר</h1>
+
+<div class="form-floating">
+  <!--<label for="floatingInput">בחר קטגוריה</label>-->
+  <div class="mb-3">
+    <label for="floatingInput">
+      בחר קטגוריה</label>
+      <select class="form-select" [(ngModel)]="new_prod.idCategory" required>
+        <option *ngFor="let category of arrCategories" value={{category.id}}>{{category.name}}</option>
+      </select>
+  </div>
+  
+
+  <div class="mb-3">
+    <label for="floatingInput">שם המוצר</label>
+    <input type="text" class="form-control" id="floatingInput" [(ngModel)]="new_prod.name" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="floatingInput">כמות </label>
+    <input type="number" class="form-control" id="floatingInput" [(ngModel)]="new_prod.quantity" required>
+  </div>
+
+  <div class="form-check " *ngFor="let item of StorageTypeArr">
+    <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="{{item.id}}" (change)="changeTypeStorage($event)" required>
+    <label for="flexRadioDefault1">
+      {{item.name}}
+    </label>
+  </div>
+
+  <!--<select matNativeControl (change)="selectCar($event)"  [(ngModel)]="new_prod.IdStorageType">
+    <option *ngFor="let option of StorageTypeArr" [value]="option.name">-->
+  <!--[selected]="selectedCar === option.value"-->
+  <!--<{{option.name}}
+    </option>
+  </select>-->
+
+
+
+  <div class="add_img">
+    <span>הוסף תמונה</span><br />
+    <input type="file" value="בחר תמונה" accept="Image/*" (change)="onSelectImg($event)" />
+  </div>
+  <img src="{{new_prod.srcImg}}">
+
+  <div>
+    <button type="submit" (click)="onSubmit()" class="btn btn-success ">הוסף</button>
+
+  </div>
+
+</div>
+
+

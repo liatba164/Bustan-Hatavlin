@@ -1,0 +1,60 @@
+.card {
+  display: inline-block;
+  margin: 1.5%;
+  text-align: center;
+  padding: 0;
+  width: 30%;
+  height:40vh;
+  /*overflow:auto;*/
+}
+
+
+h1{
+    font-size:xx-large;
+}
+
+.container {
+  position: relative;
+}
+
+.image {
+  height: 40vh;
+  background-size: cover;
+}
+
+.border-radius{
+  border-radius:15px;
+
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #0000004a;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 2s ease;
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.card-title{
+    font-size:30px;
+}
